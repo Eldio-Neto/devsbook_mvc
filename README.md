@@ -11,23 +11,16 @@ Depois é só aguardar.
 ## Configuração
 Todos os arquivos de **configuração** e aplicação estão dentro da pasta *src*.
 
-As configurações de Banco de Dados e URL estão no arquivo *src/Config.php*
+As configurações de Banco de Dados e URL estão no arquivo *src/Config.php* e *./devsbook.sql*
 
-É importante configurar corretamente a constante *BASE_DIR*:
+É importante configurar corretamente as constantes referentes à conexão ao banco de dados:
 > const BASE_DIR = '/**PastaDoProjeto**/public';
+> const DB_DRIVER = '**mysql**';
+> const DB_HOST = '/**localhost**';
+> const DB_DATABASE = '**devsbook**';
+> const DB_USER = '**Usuario_do_Banco**';
+> const DB_PASS = '';
 
 ## Uso
-Você deve acessar a pasta *public* do projeto.
+Já há usuários criados no banco de dados com publicações, é possivel criar um usuário do zero e pesquisar por nomes de usuários existentes.
 
-O ideal é criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
-
-## Modelo de MODEL
-```php
-<?php
-namespace src\models;
-use \core\Model;
-
-class Usuario extends Model {
-
-}
-```
