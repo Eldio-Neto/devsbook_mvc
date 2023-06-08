@@ -87,10 +87,12 @@ class ConfigController extends Controller
 
             $updateFields['birthdate'] = $birthdate;
 
+          
+
             // Validando e alterando a senha do usuário
             if (!empty($password)) {
                 if ($password === $passwordConfirmation) {
-                    $updateFields['birthdate'] = password_hash($password, PASSWORD_DEFAULT);;
+                    $updateFields['password'] = password_hash($password, PASSWORD_DEFAULT);;
                 } else {
                     $_SESSION['flash'] = 'Senha não confere!';
                     $this->redirect('/config');
@@ -122,7 +124,7 @@ class ConfigController extends Controller
                     $updateFields['cover'] = $coverName;
                 }
             }
-
+            
             //acão de update
             UserHandler::updateUserInfo($updateFields, $this->loggedUser->id);
         }
